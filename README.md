@@ -16,3 +16,12 @@ dependencies:
 ```
 import 'package:animated_fractionally_sized_box/animated_fractionally_sized_box.dart';
 ```
+- Use it the same as a FractionallySizedBox
+```
+AnimatedFractionallySizedBox(
+    widthFactor: widthFactor,
+    heightFactor: heighFactor,
+    alignment: Alignment.centerLeft,
+    child: ...
+)
+```
