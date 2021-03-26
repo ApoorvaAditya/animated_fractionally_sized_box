@@ -86,18 +86,23 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
   final AlignmentGeometry alignment;
 
   @override
-  _AnimatedFractionallySizedBoxState createState() => _AnimatedFractionallySizedBoxState();
+  _AnimatedFractionallySizedBoxState createState() =>
+      _AnimatedFractionallySizedBoxState();
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<AlignmentGeometry>('alignment', alignment));
-    properties.add(DoubleProperty('widthFactor', widthFactor, defaultValue: null));
-    properties.add(DoubleProperty('heightFactor', heightFactor, defaultValue: null));
+    properties
+        .add(DiagnosticsProperty<AlignmentGeometry>('alignment', alignment));
+    properties
+        .add(DoubleProperty('widthFactor', widthFactor, defaultValue: null));
+    properties
+        .add(DoubleProperty('heightFactor', heightFactor, defaultValue: null));
   }
 }
 
-class _AnimatedFractionallySizedBoxState extends AnimatedWidgetBaseState<AnimatedFractionallySizedBox> {
+class _AnimatedFractionallySizedBoxState
+    extends AnimatedWidgetBaseState<AnimatedFractionallySizedBox> {
   DoubleTween _widthFactor;
   DoubleTween _heightFactor;
   AlignmentGeometryTween _alignment;
@@ -113,21 +118,29 @@ class _AnimatedFractionallySizedBoxState extends AnimatedWidgetBaseState<Animate
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
-    _widthFactor = visitor(_widthFactor, widget.widthFactor, (dynamic value) => DoubleTween(begin: value as double))
-        as DoubleTween;
-    _heightFactor = visitor(_heightFactor, widget.heightFactor, (dynamic value) => DoubleTween(begin: value as double))
-        as DoubleTween;
+    _widthFactor = visitor(_widthFactor, widget.widthFactor,
+        (dynamic value) => DoubleTween(begin: value as double)) as DoubleTween;
+    _heightFactor = visitor(_heightFactor, widget.heightFactor,
+        (dynamic value) => DoubleTween(begin: value as double)) as DoubleTween;
     _alignment = visitor(
-            _alignment, widget.alignment, (dynamic value) => AlignmentGeometryTween(begin: value as AlignmentGeometry))
+            _alignment,
+            widget.alignment,
+            (dynamic value) =>
+                AlignmentGeometryTween(begin: value as AlignmentGeometry))
         as AlignmentGeometryTween;
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder description) {
     super.debugFillProperties(description);
-    description.add(DiagnosticsProperty<AlignmentGeometryTween>('alignment', _alignment));
-    description.add(DiagnosticsProperty<DoubleTween>('widthFactor', _widthFactor, defaultValue: null));
-    description.add(DiagnosticsProperty<DoubleTween>('heightFactor', _heightFactor, defaultValue: null));
+    description.add(
+        DiagnosticsProperty<AlignmentGeometryTween>('alignment', _alignment));
+    description.add(DiagnosticsProperty<DoubleTween>(
+        'widthFactor', _widthFactor,
+        defaultValue: null));
+    description.add(DiagnosticsProperty<DoubleTween>(
+        'heightFactor', _heightFactor,
+        defaultValue: null));
   }
 }
 
