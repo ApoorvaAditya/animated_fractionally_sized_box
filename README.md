@@ -25,3 +25,4 @@ AnimatedFractionallySizedBox(
     child: ...
 )
 ```
+- See example for usage
