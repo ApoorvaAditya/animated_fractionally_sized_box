@@ -20,7 +20,7 @@ import 'package:animated_fractionally_sized_box/animated_fractionally_sized_box.
 ```
 AnimatedFractionallySizedBox(
     widthFactor: widthFactor,
-    heightFactor: heighFactor,
+    heightFactor: heightFactor,
     alignment: Alignment.centerLeft,
     child: ...
 )
