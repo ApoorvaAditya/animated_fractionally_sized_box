@@ -10,7 +10,7 @@ The `AnimatedFractionallySizedBox` will automatically animate between the old an
 - Add this line to pubspec.yaml
 ```
 dependencies:
-  animated_fractionally_sized_box: ^1.0.0
+  animated_fractionally_sized_box: ^1.0.1
 ```
 - Import package
 ```
