@@ -1,8 +1,7 @@
 name: animated_fractionally_sized_box
 description: Animated version of FractionallySizedBox that gradually changes its values over a period of time.
 version: 1.0.0
-author: Apoorva Aditya
-homepage:
+homepage: https://github.com/ApoorvaAditya/animated_fractionally_sized_box
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
