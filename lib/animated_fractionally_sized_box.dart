@@ -25,14 +25,14 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
   /// If non-null, the [widthFactor] and [heightFactor] arguments must be
   /// non-negative.
   const AnimatedFractionallySizedBox({
-    Key key,
+    Key? key,
     this.child,
     this.widthFactor,
     this.heightFactor,
     this.alignment = Alignment.center,
-    @required Duration duration,
+    required Duration duration,
     Curve curve = Curves.linear,
-    VoidCallback onEnd,
+    VoidCallback? onEnd,
   })  : assert(widthFactor == null || widthFactor >= 0.0),
         assert(heightFactor == null || heightFactor >= 0.0),
         super(key: key, curve: curve, duration: duration, onEnd: onEnd);
@@ -45,7 +45,7 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
   /// will attempt to be as small as possible.
   ///
   /// {@macro flutter.widgets.child}
-  final Widget child;
+  final Widget? child;
 
   /// If non-null, the fraction of the incoming width given to the child.
   ///
@@ -54,7 +54,7 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
   ///
   /// If null, the incoming width constraints are passed to the child
   /// unmodified.
-  final double widthFactor;
+  final double? widthFactor;
 
   /// If non-null, the fraction of the incoming height given to the child.
   ///
@@ -63,7 +63,7 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
   ///
   /// If null, the incoming height constraints are passed to the child
   /// unmodified.
-  final double heightFactor;
+  final double? heightFactor;
 
   /// How to align the child.
   ///
@@ -103,31 +103,31 @@ class AnimatedFractionallySizedBox extends ImplicitlyAnimatedWidget {
 
 class _AnimatedFractionallySizedBoxState
     extends AnimatedWidgetBaseState<AnimatedFractionallySizedBox> {
-  DoubleTween _widthFactor;
-  DoubleTween _heightFactor;
-  AlignmentGeometryTween _alignment;
+  DoubleTween? _widthFactor;
+  DoubleTween? _heightFactor;
+  AlignmentGeometryTween? _alignment;
 
   @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
       widthFactor: _widthFactor?.evaluate(animation),
       heightFactor: _heightFactor?.evaluate(animation),
-      child: widget?.child,
+      child: widget.child,
     );
   }
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
     _widthFactor = visitor(_widthFactor, widget.widthFactor,
-        (dynamic value) => DoubleTween(begin: value as double)) as DoubleTween;
+        (dynamic value) => DoubleTween(begin: value as double?)) as DoubleTween?;
     _heightFactor = visitor(_heightFactor, widget.heightFactor,
-        (dynamic value) => DoubleTween(begin: value as double)) as DoubleTween;
+        (dynamic value) => DoubleTween(begin: value as double?)) as DoubleTween?;
     _alignment = visitor(
             _alignment,
             widget.alignment,
             (dynamic value) =>
-                AlignmentGeometryTween(begin: value as AlignmentGeometry))
-        as AlignmentGeometryTween;
+                AlignmentGeometryTween(begin: value as AlignmentGeometry?))
+        as AlignmentGeometryTween?;
   }
 
   @override
@@ -144,9 +144,9 @@ class _AnimatedFractionallySizedBoxState
   }
 }
 
-class DoubleTween extends Tween<double> {
-  DoubleTween({double begin, double end}) : super(begin: begin, end: end);
+class DoubleTween extends Tween<double?> {
+  DoubleTween({double? begin, double? end}) : super(begin: begin, end: end);
 
   @override
-  double lerp(double t) => lerpDouble(begin, end, t);
+  double? lerp(double t) => lerpDouble(begin, end, t);
 }

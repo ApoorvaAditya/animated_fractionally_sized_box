@@ -9,18 +9,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Animated Fractionally Sized Box Exaple',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Example'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final int min = 0;
   final int max = 10;
   final double height = 10;
-  int counter;
+  late int counter;
 
   @override
   void initState() {
@@ -80,8 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            RaisedButton(onPressed: increment, child: Text('Increment')),
-            RaisedButton(onPressed: decrement, child: Text('Decrement')),
+            ElevatedButton(onPressed: increment, child: Text('Increment')),
+            ElevatedButton(onPressed: decrement, child: Text('Decrement')),
           ],
         ),
       ),

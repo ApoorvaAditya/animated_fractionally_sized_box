@@ -1,10 +1,10 @@
 name: animated_fractionally_sized_box
 description: Animated version of FractionallySizedBox that gradually changes its values over a period of time.
-version: 1.0.1
+version: 2.0.0
 homepage: https://github.com/ApoorvaAditya/animated_fractionally_sized_box
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
