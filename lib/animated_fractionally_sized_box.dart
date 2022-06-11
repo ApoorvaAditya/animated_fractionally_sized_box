@@ -112,6 +112,7 @@ class _AnimatedFractionallySizedBoxState
     return FractionallySizedBox(
       widthFactor: _widthFactor?.evaluate(animation),
       heightFactor: _heightFactor?.evaluate(animation),
+      alignment: (_alignment?.evaluate(animation))!,
       child: widget.child,
     );
   }
