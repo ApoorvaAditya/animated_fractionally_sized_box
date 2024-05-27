@@ -1,3 +1,6 @@
+**AnimatedFractionallySizedBox is part of Flutter's widgets library now. Please use that instead since this package will not be maintained.**
+
+---
 # animated_fractionally_sized_box
 
 Animated version of `FractionallySizedBox` that gradually changes its values over a period of time.
